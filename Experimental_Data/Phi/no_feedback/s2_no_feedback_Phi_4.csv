@@ -1,0 +1,367 @@
+Timestamp,TotalTests,Successes,Failures,SuccessRate(%),InterceptRate(%),Confidence_Avg
+2026/1/26 23:43,204,203,1,99.51,0.49,0.95
+,,,,,,
+RuleID,FailureCount,,,,,
+telescope_status:725,1,,,,,
+,,,,,,
+,,,,,,
+"sqlite> select * from atomic_chains;
+3442|(rec__gcn_alert,pla__priority)-->(target_change)||2|2026-01-25 17:44:22|2026-01-25 19:01:46
+3443|(target_change,rec__content)-->(action_change_target)||1|2026-01-25 17:44:22|2026-01-25 17:44:22
+3444|(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_alert_conflict)||1|2026-01-25 17:45:54|2026-01-25 17:45:54
+3445|(gcn_alert_conflict,planned_targets__priority)-->(action_keep_plan)||1|2026-01-25 17:45:54|2026-01-25 17:45:54
+3446|(gcn_alert_priority,planned_targets__priority,telescope_status__status)-->(action_change_target)||1|2026-01-25 17:47:27|2026-01-25 17:47:27
+3447|(action_change_target)-->(planned_targets__schedule_time)||1|2026-01-25 17:47:27|2026-01-25 17:47:27
+3448|(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(priority_conflict)||2|2026-01-25 18:03:33|2026-01-26 04:43:46
+3449|(priority_conflict,planned_targets__name)-->(action_change_target)||8|2026-01-25 18:03:33|2026-01-26 12:13:08
+3450|(planned_targets__priority, recent_logs__priority)-->(priority_conflict)||2|2026-01-25 18:05:08|2026-01-25 18:46:55
+3451|(priority_conflict,planned_targets__id)-->(action_change_target)||1|2026-01-25 18:05:08|2026-01-25 18:05:08
+3452|(recent_logs__gcn_alert,planned_targets__priority)-->(high_priority)||1|2026-01-25 18:07:03|2026-01-25 18:07:03
+3453|(high_priority,telescope_status__pointing_ra,telescope_status__pointing_dec)-->(action_change_target)||1|2026-01-25 18:07:03|2026-01-25 18:07:03
+3454|(high_priority,planned_targets__exptime)-->(action_adjust_exptime)||1|2026-01-25 18:07:03|2026-01-25 18:07:03
+3455|(gcn_alert__content,planned_targets__priority)-->(high_priority_target)||1|2026-01-25 18:08:41|2026-01-25 18:08:41
+3456|(high_priority_target)-->(action_keep_plan)||1|2026-01-25 18:08:41|2026-01-25 18:08:41
+3457|(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority_high)||3|2026-01-25 18:10:16|2026-01-26 03:44:07
+3458|(gcn_priority_high,telescope_status__pointing_ra)-->(action_change_target)||1|2026-01-25 18:10:16|2026-01-25 18:10:16
+3459|(pla_prior,recent_logs__gcn_alert)-->(action_keep_plan)||1|2026-01-25 18:11:51|2026-01-25 18:11:51
+3460|(planned_targets__priority,recent_logs__priority)-->(action_keep_plan)||1|2026-01-25 18:11:51|2026-01-25 18:11:51
+3461|(pla_pri,recent_logs__priority,recent_logs__type)-->(high_priority_conflict)||1|2026-01-25 18:13:38|2026-01-25 18:13:38
+3462|(high_priority_conflict,planned_targets__priority)-->(action_keep_plan)||1|2026-01-25 18:13:38|2026-01-25 18:13:38
+3463|(recent_logs__gcn_alert,planned_targets__priority)-->(target_switch)||11|2026-01-25 18:15:15|2026-01-26 12:48:18
+3464|(target_switch,telescope_status__pointing_ra)-->(action_change_target)||4|2026-01-25 18:15:15|2026-01-26 12:19:45
+3465|(pla_tar,rec_log)-->(gcn_interference)||1|2026-01-25 18:20:15|2026-01-25 18:20:15
+3466|(gcn_interference,pla_priority)-->(action_change_target)||1|2026-01-25 18:20:15|2026-01-25 18:20:15
+3467|(recent_logs__gcn_alert,planned_targets__priority)-->(action_change_target)||14|2026-01-25 18:21:51|2026-01-26 12:57:54
+3468|(telescope_status__pointing_ra,telescope_status__pointing_dec)-->(action_change_target)||2|2026-01-25 18:21:51|2026-01-26 12:43:04
+3469|(recent_logs__gcn_alert,planned_targets__priority)-->(priority_conflict)||17|2026-01-25 18:26:52|2026-01-26 12:13:08
+3470|(priority_conflict)-->(action_change_target)||14|2026-01-25 18:26:52|2026-01-26 12:54:55
+3471|(pla__priority,recent_logs__gcn_alert)-->(high_value)||1|2026-01-25 18:28:30|2026-01-25 18:28:30
+3472|(high_value,telescope_status__pointing_ra,telescope_status__pointing_dec)-->(action_change_target)||1|2026-01-25 18:28:30|2026-01-25 18:28:30
+3473|(action_change_target)-->(action_keep_plan)||1|2026-01-25 18:28:30|2026-01-25 18:28:30
+3475|(recent_logs__gcn_alert,planned_targets__exptime)-->(action_change_target)||1|2026-01-25 18:30:19|2026-01-25 18:30:19
+3476|(pla__priority,pla__status)-->(action_change_target)||1|2026-01-25 18:32:03|2026-01-25 18:32:03
+3477|(gcn_alert__type,gcn_alert__priority)-->(action_adjust_exptime)||1|2026-01-25 18:32:03|2026-01-25 18:32:03
+3478|(gcn_alert__type,pla__status)-->(action_wait)||1|2026-01-25 18:32:03|2026-01-25 18:32:03
+3479|(rec_logs__content,rec_logs__gcn_alert)-->(gcn_high_priority)||1|2026-01-25 18:33:34|2026-01-25 18:33:34
+3480|(gcn_high_priority,pla_targets__priority)-->(action_change_target)||1|2026-01-25 18:33:34|2026-01-25 18:33:34
+3483|(planned_targets__priority,planned_targets__name)-->(action_change_target)||1|2026-01-25 18:35:09|2026-01-25 18:35:09
+3484|(recent_logs__gcn_alert,planned_targets__priority)-->(target_change)||8|2026-01-25 18:36:54|2026-01-26 12:21:36
+3485|(recent_logs__gcn_alert,telescope_status__pointing)-->(action_change_target)||1|2026-01-25 18:36:54|2026-01-25 18:36:54
+3486|(pla__priority,pla__status,recent_logs__type,recent_logs__priority)-->(current_target)||1|2026-01-25 18:38:31|2026-01-25 18:38:31
+3487|(current_target,pla__priority)-->(action_keep_plan)||1|2026-01-25 18:38:31|2026-01-25 18:38:31
+3488|(recent_logs__type,recent_logs__priority)-->(gcn_alert)||2|2026-01-25 18:38:31|2026-01-26 04:40:29
+3489|(gcn_alert,pla__priority)-->(action_keep_plan)||1|2026-01-25 18:38:31|2026-01-25 18:38:31
+3491|(recent_logs__content,planned_targets__exptime)-->(action_change_exptime)||1|2026-01-25 18:40:17|2026-01-25 18:40:17
+3492|(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(gcn_alert_priority)||1|2026-01-25 18:41:52|2026-01-25 18:41:52
+3493|(gcn_alert_priority)-->(action_change_target)||1|2026-01-25 18:41:52|2026-01-25 18:41:52
+3494|(gcn_alert__content,planned_targets__name)-->(gcn_target_switch)||1|2026-01-25 18:41:52|2026-01-25 18:41:52
+3497|(re+pl+te)-->(gcn_priority_conflict)||1|2026-01-25 18:45:09|2026-01-25 18:45:09
+3498|(gcn_priority_conflict,pla_priority)-->(action_change_target)||1|2026-01-25 18:45:09|2026-01-25 18:45:09
+3499|(action_change_target,gcn_exptime)-->(action_adjust_exptime)||1|2026-01-25 18:45:09|2026-01-25 18:45:09
+3501|(priority_conflict,planned_targets__exptime)-->(action_keep_plan)||1|2026-01-25 18:46:55|2026-01-25 18:46:55
+3502|(recent_logs__gcn_alert)-->(action_keep_plan)||1|2026-01-25 18:46:55|2026-01-25 18:46:55
+3503|(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_alert_priority_conflict)||1|2026-01-25 18:48:32|2026-01-25 18:48:32
+3504|(gcn_alert_priority_conflict,planned_targets__priority)-->(action_keep_plan)||1|2026-01-25 18:48:32|2026-01-25 18:48:32
+3505|(planned_targets__priority,recent_logs__gcn_alert)-->(action_change_target)||4|2026-01-25 18:48:32|2026-01-26 12:44:59
+3507|(priority_conflict,planned_targets__status)-->(action_change_target)||3|2026-01-25 18:50:16|2026-01-25 19:41:39
+3508|(gcn__priority,pla__priority)-->(action_change_target)||1|2026-01-25 18:51:51|2026-01-25 18:51:51
+3509|(gcn__content,pla__ra)-->(action_change_target)||1|2026-01-25 18:51:51|2026-01-25 18:51:51
+3513|(recent_logs__gcn_alert,planned_targets__exptime)-->(action_adjust_exptime)||3|2026-01-25 18:55:15|2026-01-26 12:38:19
+3514|SqlReason:""(recent_logs__gcn_alert,planned_targets__priority)-->(high_priority)||1|2026-01-25 18:55:16|2026-01-25 18:55:16
+3515|(recent_logs__gcn_alert,planned_targets__exptime)-->(action_adjust_exptime)""||1|2026-01-25 18:55:16|2026-01-25 18:55:16
+3516|(recent_logs__gcn_alert,planned_targets__priority,telescope_status__pointing_ra)-->(gcn_priority_override)||1|2026-01-25 18:56:59|2026-01-25 18:56:59
+3517|(gcn_priority_override,planned_targets__ra)-->(action_change_target)||1|2026-01-25 18:56:59|2026-01-25 18:56:59
+3518|(gcn_priority_override,planned_targets__exptime)-->(action_adjust_exptime)||1|2026-01-25 18:56:59|2026-01-25 18:56:59
+3519|(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority)||6|2026-01-25 18:58:34|2026-01-26 04:52:15
+3520|(gcn_priority,telescope_status__pointing_ra)-->(action_change_target)||3|2026-01-25 18:58:34|2026-01-26 03:42:24
+3521|(gcn_priority,planned_targets__exptime)-->(action_change_exptime)||3|2026-01-25 18:58:34|2026-01-26 03:05:42
+3525|(target_change,pla__status)-->(action_change_target)||1|2026-01-25 19:01:46|2026-01-25 19:01:46
+3526|(recent_logs__type,gcn_alert,recent_logs__priority)-->(gcn_priority_high)||1|2026-01-25 19:03:42|2026-01-25 19:03:42
+3527|(gcn_priority_high,planned_targets__priority)-->(action_change_target)||2|2026-01-25 19:03:42|2026-01-26 03:54:16
+3528|(recent_logs__content,telescope_status__pointing_ra)-->(target_pointing_mismatch)||1|2026-01-25 19:03:42|2026-01-25 19:03:42
+3529|(target_pointing_mismatch,planned_targets__status)-->(action_change_target)||1|2026-01-25 19:03:42|2026-01-25 19:03:42
+3530|(gcn__priority,pla__priority)-->(priority_conflict)||3|2026-01-25 19:05:13|2026-01-26 12:51:35
+3532|(rec_log__gcn_alert,rec_log__content)-->(gcn_priority)||1|2026-01-25 19:06:59|2026-01-25 19:06:59
+3533|(gcn_priority,pla_tar__priority)-->(action_change_target)||1|2026-01-25 19:06:59|2026-01-25 19:06:59
+3534|(rec_log__content,pla_tar__exptime)-->(action_adjust_exptime)||1|2026-01-25 19:06:59|2026-01-25 19:06:59
+3535|(pla__priority,recent_logs__type,recent_logs__priority)-->(gcn_alert)||1|2026-01-25 19:08:31|2026-01-25 19:08:31
+3536|(gcn_alert,pla__id)-->(action_change_target)||1|2026-01-25 19:08:31|2026-01-25 19:08:31
+3537|(pla__priority,pla__status,recent_logs__type)-->(action_wait)||1|2026-01-25 19:10:18|2026-01-25 19:10:18
+3538|(recent_logs__priority,pla__priority)-->(action_wait)||1|2026-01-25 19:10:18|2026-01-25 19:10:18
+3539|(telescope_status__status,pla__status)-->(action_keep_plan)||1|2026-01-25 19:10:18|2026-01-25 19:10:18
+3540|(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(high_priority)||1|2026-01-25 19:11:49|2026-01-25 19:11:49
+3541|(high_priority,planned_targets__status)-->(action_change_target)||2|2026-01-25 19:11:49|2026-01-26 04:22:03
+3542|(recent_logs__content,recent_logs__type,planned_targets__priority)-->(gcn_priority)||1|2026-01-25 19:13:34|2026-01-25 19:13:34
+3543|(gcn_priority,planned_targets__priority)-->(action_change_target)||9|2026-01-25 19:13:34|2026-01-26 12:49:42
+3544|(gcn_log__content,planned_tar__ra,planned_tar__dec,telescope_stat__pointing_ra,telescope_stat__pointing_dec)-->(priority_conflict)||1|2026-01-25 19:15:11|2026-01-25 19:15:11
+3546|(recent_logs__type,planned_targets__priority)-->(gcn_priority)||2|2026-01-25 19:16:53|2026-01-26 03:10:31
+3549|(gcn_priority,planned_targets__exptime)-->(action_change_target)||1|2026-01-25 19:18:29|2026-01-25 19:18:29
+3550|(planned_targets__priority)-->(target_priority_conflict)||1|2026-01-25 19:18:29|2026-01-25 19:18:29
+3551|(target_priority_conflict)-->(action_change_target)||1|2026-01-25 19:18:29|2026-01-25 19:18:29
+3552|(planned_targets__priority,recent_logs__priority)-->(target_switch)||1|2026-01-25 19:20:14|2026-01-25 19:20:14
+3553|(target_switch,planned_targets__priority)-->(action_change_target)||1|2026-01-25 19:20:14|2026-01-25 19:20:14
+3554|(recent_logs__gcn_alert,planned_targets__priority,telescope_status__pointing)-->(target_switch)||1|2026-01-25 19:21:45|2026-01-25 19:21:45
+3555|(target_switch)-->(action_change_target)||1|2026-01-25 19:21:45|2026-01-25 19:21:45
+3556|(rec__type,rec__priority)-->(gcn_alert)||1|2026-01-25 19:23:36|2026-01-25 19:23:36
+3557|(gcn_alert,pla__priority)-->(action_wait)||1|2026-01-25 19:23:36|2026-01-25 19:23:36
+3558|(pla__priority,pla__name)-->(action_change_target)||1|2026-01-25 19:23:36|2026-01-25 19:23:36
+3559|(recent_logs__gcn_alert)-->(gcn_priority)||4|2026-01-25 19:25:07|2026-01-26 12:49:42
+3561|(gcn_alert__content,planned_targets__priority)-->(high_priority)||1|2026-01-25 19:26:54|2026-01-25 19:26:54
+3562|(high_priority,planned_targets__priority)-->(action_change_target)||2|2026-01-25 19:26:54|2026-01-26 11:34:52
+3563|(gcn__priority,planned__priority)-->(planned__priority_high)||1|2026-01-25 19:28:25|2026-01-25 19:28:25
+3564|(planned__priority_high,planned__exptime)-->(action_keep_plan)||1|2026-01-25 19:28:25|2026-01-25 19:28:25
+3565|(recent_logs__content,recent_logs__type)-->(gcn_alert)||2|2026-01-25 19:30:16|2026-01-26 12:56:25
+3566|(gcn_alert,planned_targets__priority)-->(action_change_target)||5|2026-01-25 19:30:16|2026-01-26 12:56:25
+3567|(telescope_status__pointing_ra,telescope_status__pointing_dec)-->(target_match)||1|2026-01-25 19:30:16|2026-01-25 19:30:16
+3568|(target_match)-->(planned_targets__name)||1|2026-01-25 19:30:16|2026-01-25 19:30:16
+3569|(planned_targets__priority,recent_logs__type,recent_logs__priority)-->(high_priority)||1|2026-01-25 19:31:50|2026-01-25 19:31:50
+3570|(high_priority,planned_targets__name)-->(action_change_target)||1|2026-01-25 19:31:50|2026-01-25 19:31:50
+3571|(recent_logs__priority,recent_logs__scientific_value)-->(ignore_gcn)||1|2026-01-25 19:31:50|2026-01-25 19:31:50
+3572|(ignore_gcn,planned_targets__name)-->(action_keep_plan)||1|2026-01-25 19:31:50|2026-01-25 19:31:50
+3573|(rec_logs__gcn_alert,rec_logs__type,pla_tar__priority)-->(target_switch)||1|2026-01-25 19:33:33|2026-01-25 19:33:33
+3574|(target_switch,rec_logs__gcn_alert,pla_tar__priority)-->(action_change_target)||1|2026-01-25 19:33:33|2026-01-25 19:33:33
+3575|(rec__gcn_alert,pla__priority)-->(priority_conflict)||1|2026-01-25 19:35:05|2026-01-25 19:35:05
+3576|(priority_conflict,telescope_status__pointing)-->(action_change_target)||1|2026-01-25 19:35:05|2026-01-25 19:35:05
+3578|(target_change)-->(action_change_target)||3|2026-01-25 19:36:54|2026-01-26 11:44:54
+3579|(recent_logs__gcn_alert,planned_targets__priority)-->(high_value_target_change)||1|2026-01-25 19:38:24|2026-01-25 19:38:24
+3580|(high_value_target_change,planned_targets__exptime)-->(action_change_target)||1|2026-01-25 19:38:24|2026-01-25 19:38:24
+3581|(planned_targets__priority,recent_logs__type,recent_logs__content)-->(gcn_alert_priority)||1|2026-01-25 19:40:11|2026-01-25 19:40:11
+3582|(gcn_alert_priority,planned_targets__priority)-->(action_change_target)||3|2026-01-25 19:40:11|2026-01-26 11:08:13
+3586|(gcn_priority_high,planned_targets__ra)-->(action_change_target)||1|2026-01-25 19:43:36|2026-01-25 19:43:36
+3587|(recent_logs__content,planned_targets__exptime)-->(action_adjust_exptime)||5|2026-01-25 19:43:36|2026-01-26 11:29:57
+3588|(recent_logs__gcn_alert,planned_targets__priority)-->(high_priority_conflict)||1|2026-01-25 19:45:08|2026-01-25 19:45:08
+3589|(high_priority_conflict,planned_targets__name)-->(action_change_target)||1|2026-01-25 19:45:08|2026-01-25 19:45:08
+3590|(gcn+pla+sta)->target_priority_conflict||1|2026-01-25 19:46:53|2026-01-25 19:46:53
+3591|(target_priority_conflict)->action_change_target||1|2026-01-25 19:46:53|2026-01-25 19:46:53
+3592|(rec_logs__gcn_alert,pla_targets__priority)-->(priority_conflict)||1|2026-01-25 19:48:23|2026-01-25 19:48:23
+3593|(priority_conflict,pla_targets__priority)-->(action_change_target)||1|2026-01-25 19:48:23|2026-01-25 19:48:23
+3594|(rec+pla+tel)-->(action_change_target)||1|2026-01-25 19:50:14|2026-01-25 19:50:14
+3595|(pla_priority,pla_exptime)-->(action_change_target)||1|2026-01-25 19:50:14|2026-01-25 19:50:14
+3596|(recent_logs__gcn_alert,planned_targets__priority,planned_targets__exptime,telescope_status__pointing_ra)-->(action_change_target)||1|2026-01-26 02:34:05|2026-01-26 02:34:05
+3597|(planned_targets__priority,planned_targets__exptime)-->(action_change_target)||1|2026-01-26 02:34:05|2026-01-26 02:34:05
+3598|(gcn_alert__priority,planned_targets__priority)-->(target_priority)||1|2026-01-26 02:35:42|2026-01-26 02:35:42
+3599|(target_priority,planned_targets__status)-->(action_change_target)||1|2026-01-26 02:35:42|2026-01-26 02:35:42
+3600|(gcn_alert__priority,planned_targets__priority)-->(priority_conflict)||1|2026-01-26 02:37:19|2026-01-26 02:37:19
+3602|(action_change_target,telescope_status__pointing_ra)-->(planned_targets__pointing_ra)||1|2026-01-26 02:37:19|2026-01-26 02:37:19
+3603|(recent_logs__type,planned_targets__priority,recent_logs__priority)-->(gcn_priority)||1|2026-01-26 02:38:56|2026-01-26 02:38:56
+3605|(recent_logs__gcn_alert)-->(priority_conflict)||3|2026-01-26 02:40:30|2026-01-26 12:38:19
+3606|(priority_conflict,planned_targets__priority)-->(action_change_target)||2|2026-01-26 02:40:30|2026-01-26 12:38:19
+3609|(gcn_priority,telescope_status__pointing)-->(action_change_target)||1|2026-01-26 02:42:08|2026-01-26 02:42:08
+3612|(recent_logs__type, recent_logs__priority, planned_targets__priority)-->(gcn_priority)||1|2026-01-26 02:45:15|2026-01-26 02:45:15
+3613|(gcn_priority)-->(action_change_target)||1|2026-01-26 02:45:15|2026-01-26 02:45:15
+3614|(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(target_priority_change)||1|2026-01-26 02:46:48|2026-01-26 02:46:48
+3615|(target_priority_change,planned_targets__status)-->(action_change_target)||2|2026-01-26 02:46:48|2026-01-26 03:25:21
+3616|(recent_logs__type,planned_targets__priority)-->(gcn_alert_priority)||2|2026-01-26 03:00:51|2026-01-26 11:08:13
+3618|(rec_logs__gcn_alert,planned_targets__priority,telescope_status__pointing)-->(action_change_target)||1|2026-01-26 03:02:28|2026-01-26 03:02:28
+3619|(planned_targets__exptime)-->(action_adjust_exptime)||1|2026-01-26 03:02:28|2026-01-26 03:02:28
+3620|(rec__gcn_alert,pla__priority)-->(high_priority_target)||1|2026-01-26 03:04:00|2026-01-26 03:04:00
+3621|(high_priority_target)-->(action_change_target)||1|2026-01-26 03:04:00|2026-01-26 03:04:00
+3625|(gcn_alert__priority,planned_targets__priority)-->(target_match)||1|2026-01-26 03:07:14|2026-01-26 03:07:14
+3626|(target_match,planned_targets__status)-->(action_change_target)||1|2026-01-26 03:07:14|2026-01-26 03:07:14
+3627|(planned_targets__priority,recent_logs__gcn_alert)-->(target_priority_conflict)||1|2026-01-26 03:08:53|2026-01-26 03:08:53
+3628|(target_priority_conflict,planned_targets__priority)-->(action_change_target)||1|2026-01-26 03:08:53|2026-01-26 03:08:53
+3631|(gcn_alert_priority,planned_targets_priority)-->(switch_target)||1|2026-01-26 03:12:03|2026-01-26 03:12:03
+3632|(switch_target,planned_targets__id)-->(action_change_target)||1|2026-01-26 03:12:03|2026-01-26 03:12:03
+3634|(action_change_target,telescope_status__pointing_ra)-->(action_change_target)||1|2026-01-26 03:13:45|2026-01-26 03:13:45
+3637|(telescope_status__status)-->(action_change_target)||1|2026-01-26 03:15:27|2026-01-26 03:15:27
+3638|(recent_logs__gcn_alert)-->(action_change_target)||3|2026-01-26 03:17:01|2026-01-26 11:16:23
+3639|(planned_targets__priority, recent_logs__gcn_alert)-->(action_change_target)||1|2026-01-26 03:17:01|2026-01-26 03:17:01
+3641|(priority_conflict,planned_targets__ra)-->(action_change_target)||3|2026-01-26 03:18:38|2026-01-26 11:21:36
+3643|(recent_logs__gcn_alert,planned_targets__priority,planned_targets__schedule_time)-->(action_wait)||1|2026-01-26 03:20:19|2026-01-26 03:20:19
+3644|(planned_targets__priority,planned_targets__schedule_time)-->(action_wait)||1|2026-01-26 03:20:19|2026-01-26 03:20:19
+3646|(target_change,telescope_status__pointing_ra)-->(action_change_target)||2|2026-01-26 03:23:40|2026-01-26 12:16:26
+3647|(planned_targets__priority,recent_logs__priority)-->(target_priority_change)||1|2026-01-26 03:25:21|2026-01-26 03:25:21
+3651|(action_change_target,planned_targets__exptime)-->(action_adjust_exptime)||2|2026-01-26 03:27:03|2026-01-26 12:57:54
+3652|(gcn__content,gcn__type)-->(gcn_alert)||1|2026-01-26 03:28:39|2026-01-26 03:28:39
+3653|(planned_targets__priority,planned_targets__status)-->(action_keep_plan)||1|2026-01-26 03:28:39|2026-01-26 03:28:39
+3654|(rec_log__gcn_alert,rec_log__priority)-->(priority_conflict)||1|2026-01-26 03:30:15|2026-01-26 03:30:15
+3655|(priority_conflict,pla_tar__priority)-->(action_change_target)||1|2026-01-26 03:30:15|2026-01-26 03:30:15
+3656|(rec__gcn_alert,pri__priority)-->(pri_conflict)||1|2026-01-26 03:31:53|2026-01-26 03:31:53
+3657|(pri_conflict,pla__priority)-->(act_change_target)||1|2026-01-26 03:31:53|2026-01-26 03:31:53
+3658|(pla_priority,rec_priority)-->(high_priority)||1|2026-01-26 03:33:32|2026-01-26 03:33:32
+3659|(high_priority,pla_exptime)-->(action_keep_plan)||1|2026-01-26 03:33:32|2026-01-26 03:33:32
+3660|(pla_name,pla_priority)-->(action_keep_plan)||1|2026-01-26 03:33:32|2026-01-26 03:33:32
+3661|(rec_logs__type,rec_logs__content,pla_tar__priority)-->(gcn_priority_conflict)||1|2026-01-26 03:35:13|2026-01-26 03:35:13
+3662|(gcn_priority_conflict,pla_tar__priority)-->(action_change_target)||1|2026-01-26 03:35:13|2026-01-26 03:35:13
+3663|(gcn_priority_conflict,pla_tar__exptime)-->(action_adjust_exptime)||1|2026-01-26 03:35:13|2026-01-26 03:35:13
+3664|(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(action_change_target)||1|2026-01-26 03:36:56|2026-01-26 03:36:56
+3665|(action_change_target)-->(planned_targets__name)||2|2026-01-26 03:36:56|2026-01-26 03:55:52
+3666|SqlReason: (recent_logs__type, recent_logs__priority, planned_targets__priority)-->action_change_target||1|2026-01-26 03:36:56|2026-01-26 03:36:56
+3667|action_change_target-->planned_targets__name||1|2026-01-26 03:36:56|2026-01-26 03:36:56
+3670|(recent_logs__type,gcn_alert,recent_logs__content,planned_targets__priority)-->(gcn_priority_high)||1|2026-01-26 03:40:40|2026-01-26 03:40:40
+3671|(gcn_priority_high,planned_targets__name,planned_targets__ra,planned_targets__dec)-->(action_change_target)||1|2026-01-26 03:40:40|2026-01-26 03:40:40
+3672|(gcn_priority_high,planned_targets__exptime)-->(action_adjust_exptime)||2|2026-01-26 03:40:40|2026-01-26 03:54:16
+3676|(gcn_priority_high,planned_targets__name)-->(action_change_target)||1|2026-01-26 03:44:07|2026-01-26 03:44:07
+3678|(target_switch,planned_targets__exptime)-->(action_change_exptime)||2|2026-01-26 03:45:47|2026-01-26 11:53:03
+3680|(planned_targets__priority,recent_logs__priority)-->(high_priority)||1|2026-01-26 03:47:30|2026-01-26 03:47:30
+3681|(recent_logs__gcn_alert,telescope_status__pointing_ra,planned_targets__ra)-->(action_change_target)||1|2026-01-26 03:47:30|2026-01-26 03:47:30
+3684|(recent_logs__gcn_alert,planned_targets__exptime)-->(action_change_exptime)||3|2026-01-26 03:49:14|2026-01-26 12:41:36
+3685|(recent_logs__type,planned_targets__priority,recent_logs__content)-->(gcn_priority)||1|2026-01-26 03:50:56|2026-01-26 03:50:56
+3688|(recent_logs__type,planned_targets__priority)-->(high_priority)||1|2026-01-26 03:52:30|2026-01-26 03:52:30
+3689|(high_priority,planned_targets__status)-->(action_keep_plan)||2|2026-01-26 03:52:30|2026-01-26 04:27:10
+3690|(recent_logs__type,recent_logs__content,planned_targets__priority)-->(gcn_priority_high)||1|2026-01-26 03:54:16|2026-01-26 03:54:16
+3695|(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(gcn_priority)||1|2026-01-26 03:57:35|2026-01-26 03:57:35
+3696|(gcn_priority,telescope_status__pointing_ra,telescope_status__pointing_dec)-->(action_change_target)||1|2026-01-26 03:57:35|2026-01-26 03:57:35
+3700|(action_change_target,telescope_status__status)-->(planned_targets__exptime)||1|2026-01-26 04:00:58|2026-01-26 04:00:58
+3701|(rec_logs__type,rec_logs__priority)-->(gcn_alert)||1|2026-01-26 04:02:41|2026-01-26 04:02:41
+3702|(gcn_alert,pla_targets__priority)-->(target_change)||1|2026-01-26 04:02:41|2026-01-26 04:02:41
+3703|(pla_targets__priority,telescope_status__pointing_ra)-->(action_change_target)||1|2026-01-26 04:02:41|2026-01-26 04:02:41
+3704|(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority_higher)||1|2026-01-26 04:04:25|2026-01-26 04:04:25
+3705|(gcn_priority_higher,telescope_status__status)-->(action_change_target)||1|2026-01-26 04:04:26|2026-01-26 04:04:26
+3706|(pla__priority,recent_logs__type,recent_logs__priority)-->(high_priority)||1|2026-01-26 04:06:09|2026-01-26 04:06:09
+3707|(high_priority,pla__priority)-->(action_change_target)||1|2026-01-26 04:06:09|2026-01-26 04:06:09
+3708|(recent_logs__content,recent_logs__priority,planned_targets__priority)-->(high_priority)||1|2026-01-26 04:22:03|2026-01-26 04:22:03
+3710|(recent_logs__gcn_alert,planned_targets__priority)-->(target_priority)||2|2026-01-26 04:23:35|2026-01-26 11:13:14
+3711|(target_priority,planned_targets__name)-->(action_change_target)||2|2026-01-26 04:23:35|2026-01-26 11:13:14
+3713|(action_change_target,planned_targets__ra)-->(planned_targets__ra)||1|2026-01-26 04:25:33|2026-01-26 04:25:33
+3714|(action_change_target,planned_targets__dec)-->(planned_targets__dec)||1|2026-01-26 04:25:34|2026-01-26 04:25:34
+3715|(planned_targets__priority,planned_targets__status,recent_logs__gcn_alert)-->(high_priority)||1|2026-01-26 04:27:10|2026-01-26 04:27:10
+3719|(gcn_alert__priority,planned_targets__priority)-->(target_change_priority)||1|2026-01-26 04:30:26|2026-01-26 04:30:26
+3720|(target_change_priority,planned_targets__status)-->(action_change_target)||1|2026-01-26 04:30:26|2026-01-26 04:30:26
+3721|(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority_conflict)||1|2026-01-26 04:32:16|2026-01-26 04:32:16
+3722|(gcn_priority_conflict,planned_targets__name)-->(action_change_target)||1|2026-01-26 04:32:16|2026-01-26 04:32:16
+3725|(recent_logs__type,recent_logs__content)-->(gcn_alert_low_value)||1|2026-01-26 04:37:14|2026-01-26 04:37:14
+3726|(gcn_alert_low_value,planned_targets__priority)-->(action_change_target)||1|2026-01-26 04:37:14|2026-01-26 04:37:14
+3727|(telescope_status__pointing_ra,planned_targets__ra)-->(action_change_target)||1|2026-01-26 04:37:14|2026-01-26 04:37:14
+3728|(gcn_recent_logs__priority,planned_targets__priority)-->(routine_priority_conflict)||1|2026-01-26 04:38:49|2026-01-26 04:38:49
+3729|(routine_priority_conflict)-->(action_change_target)||1|2026-01-26 04:38:49|2026-01-26 04:38:49
+3731|(planned_targets__priority)-->(action_keep_plan)||1|2026-01-26 04:40:29|2026-01-26 04:40:29
+3732|(gcn_alert,planned_targets__priority)-->(action_keep)||1|2026-01-26 04:40:29|2026-01-26 04:40:29
+3733|(recent_logs__type,planned_targets__priority)-->(gcn_priority_change)||1|2026-01-26 04:42:10|2026-01-26 04:42:10
+3734|(gcn_priority_change,planned_targets__priority)-->(action_change_target)||1|2026-01-26 04:42:10|2026-01-26 04:42:10
+3737|(recent_logs__gcn_alert,planned_targets__priority,telescope_status__status)-->(switch_target)||1|2026-01-26 04:45:38|2026-01-26 04:45:38
+3738|(switch_target,planned_targets__name)-->(action_change_target)||1|2026-01-26 04:45:38|2026-01-26 04:45:38
+3739|(pla_priority,pla_status)-->(action_keep_plan)||2|2026-01-26 04:48:55|2026-01-26 12:36:21
+3740|(pla_priority,recent_logs__gcn_alert)-->(action_keep_plan)||1|2026-01-26 04:48:55|2026-01-26 04:48:55
+3741|(pla_priority,recent_logs__gcn_alert)-->(high_priority)||1|2026-01-26 04:50:35|2026-01-26 04:50:35
+3742|(high_priority,pla_priority)-->(action_keep_plan)||1|2026-01-26 04:50:35|2026-01-26 04:50:35
+3744|(gcn_priority,planned_targets__id)-->(action_change_target)||1|2026-01-26 04:52:15|2026-01-26 04:52:15
+3746|(target_switch,planned_targets__exptime)-->(action_change_target)||1|2026-01-26 04:53:53|2026-01-26 04:53:53
+3747|(recent_logs__gcn_alert,planned_targets__priority,telescope_status__pointing_ra)-->(action_change_target)||1|2026-01-26 04:55:38|2026-01-26 04:55:38
+3748|(action_change_target)-->(planned_targets__ra,planned_targets__dec)||1|2026-01-26 04:55:38|2026-01-26 04:55:38
+3751|(gcn_rea,pla_rea,pla_prio)-->(gcn_priority)||1|2026-01-26 05:02:22|2026-01-26 05:02:22
+3752|(gcn_priority,pla_name)-->(action_change_target)||1|2026-01-26 05:02:22|2026-01-26 05:02:22
+3754|(recent_logs__gcn_alert,telescope_status__pointing_dec)-->(action_change_target)||1|2026-01-26 05:05:35|2026-01-26 05:05:35
+3755|(planned_targets__priority,planned_targets__status,telescope_status__pointing_ra,telescope_status__pointing_dec,recent_logs__gcn_alert)-->(action_change_target)||1|2026-01-26 05:07:16|2026-01-26 05:07:16
+3756|(action_change_target)-->(planned_targets__exptime)||1|2026-01-26 05:07:16|2026-01-26 05:07:16
+3757|(rec_logs__gcn_alert,pla_tar__priority)-->(priority_conflict)||1|2026-01-26 05:08:58|2026-01-26 05:08:58
+3759|(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(gcn_priority_conflict)||1|2026-01-26 05:12:14|2026-01-26 05:12:14
+3760|(gcn_priority_conflict,planned_targets__status)-->(action_change_target)||1|2026-01-26 05:12:14|2026-01-26 05:12:14
+3768|(priority_conflict,telescope_status__pointing_ra)-->(planned_targets__ra)||1|2026-01-26 11:11:39|2026-01-26 11:11:39
+3769|(priority_conflict,telescope_status__pointing_dec)-->(planned_targets__dec)||1|2026-01-26 11:11:39|2026-01-26 11:11:39
+3772|(recent_logs__content)-->(planned_targets__ra)||1|2026-01-26 11:13:14|2026-01-26 11:13:14
+3773|(recent_logs__content)-->(planned_targets__dec)||1|2026-01-26 11:13:14|2026-01-26 11:13:14
+3774|(recent_logs__content)-->(planned_targets__exptime)||1|2026-01-26 11:13:14|2026-01-26 11:13:14
+3775|(rec_log__content,rec_log__type)-->(gcn_low_value)||1|2026-01-26 11:14:57|2026-01-26 11:14:57
+3776|(gcn_low_value,plan_tar__priority)-->(action_keep_plan)||1|2026-01-26 11:14:57|2026-01-26 11:14:57
+3777|(plan_tar__priority,plan_tar__status)-->(action_keep_plan)||1|2026-01-26 11:14:57|2026-01-26 11:14:57
+3782|(gcn+pla+sta)->gcn_window||1|2026-01-26 11:19:48|2026-01-26 11:19:48
+3783|(gcn_window,pla_priority)-->(action_wait)||1|2026-01-26 11:19:48|2026-01-26 11:19:48
+3784|(pla_priority,pla_exptime)-->(action_keep_plan)||1|2026-01-26 11:19:48|2026-01-26 11:19:48
+3787|(planned_targets__priority, recent_logs__type)-->(high_priority_target)||1|2026-01-26 11:23:05|2026-01-26 11:23:05
+3788|(high_priority_target, recent_logs__content)-->(action_keep_plan)||1|2026-01-26 11:23:05|2026-01-26 11:23:05
+3789|(rec_logs__gcn_alert,planned_targets__priority)-->(action_change_target)||1|2026-01-26 11:25:10|2026-01-26 11:25:10
+3790|(planned_targets__priority,gcn_alert__priority)-->(action_change_target)||1|2026-01-26 11:25:10|2026-01-26 11:25:10
+3791|(rec__gcn_alert_priority,pla__priority)-->(priority_conflict)||1|2026-01-26 11:28:22|2026-01-26 11:28:22
+3796|(gcn__content,planned_targets__priority,telescope_status__pointing_ra,telescope_status__pointing_dec)-->(priority_conflict)||1|2026-01-26 11:31:37|2026-01-26 11:31:37
+3798|(rec_logs__content,rec_logs__type)-->(gcn_high_priority)||1|2026-01-26 11:33:05|2026-01-26 11:33:05
+3799|(gcn_high_priority,plan_tar__priority)-->(action_change_target)||1|2026-01-26 11:33:05|2026-01-26 11:33:05
+3800|(recent_logs__gcn_alert)-->(high_priority)||1|2026-01-26 11:34:52|2026-01-26 11:34:52
+3802|(recent_logs__type,recent_logs__priority)-->(gcn_interference)||1|2026-01-26 11:36:21|2026-01-26 11:36:21
+3803|(gcn_interference,planned_targets__priority)-->(action_change_target)||1|2026-01-26 11:36:21|2026-01-26 11:36:21
+3804|(gcn_alert__type,gcn_alert__priority,planned_targets__priority)-->(action_change_target)||1|2026-01-26 11:38:20|2026-01-26 11:38:20
+3805|(gcn_alert__content,telescope_status__pointing_ra)-->(action_change_target)||1|2026-01-26 11:38:20|2026-01-26 11:38:20
+3806|(pla__priority,pla__exptime,pla__status,recent_logs__type,recent_logs__priority,recent_logs__content)-->(high_priority_task)||1|2026-01-26 11:39:56|2026-01-26 11:39:56
+3807|(high_priority_task)-->(action_keep_plan)||1|2026-01-26 11:39:56|2026-01-26 11:39:56
+3808|(recent_logs__type,recent_logs__priority,recent_logs__content)-->(low_scientific_value)||1|2026-01-26 11:39:56|2026-01-26 11:39:56
+3809|(low_scientific_value)-->(action_keep_plan)||1|2026-01-26 11:39:56|2026-01-26 11:39:56
+3812|(recent_logs__content,recent_logs__type,planned_targets__priority)-->(priority_conflict)||1|2026-01-26 11:43:05|2026-01-26 11:43:05
+3813|(priority_conflict,telescope_status__pointing_dec,planned_targets__ra)-->(action_change_target)||1|2026-01-26 11:43:05|2026-01-26 11:43:05
+3814|(action_change_target,telescope_status__pointing_ra)-->(planned_targets__exptime)||2|2026-01-26 11:43:05|2026-01-26 12:04:57
+3817|(recent_logs__type,planned_targets__priority,recent_logs__content)-->(target_priority_change)||1|2026-01-26 11:46:22|2026-01-26 11:46:22
+3818|(target_priority_change,planned_targets__ra)-->(action_change_target)||1|2026-01-26 11:46:22|2026-01-26 11:46:22
+3821|(recent_logs__content,recent_logs__type)-->(action_change_exptime)||1|2026-01-26 11:48:16|2026-01-26 11:48:16
+3822|(planned_targets__priority,planned_targets__status,recent_logs__gcn_alert)-->(target_change)||1|2026-01-26 11:51:32|2026-01-26 11:51:32
+3823|(target_change,planned_targets__name)-->(action_change_target)||1|2026-01-26 11:51:32|2026-01-26 11:51:32
+3826|(recent_logs__gcn_alert,planned_targets__ra,planned_targets__dec)-->(action_change_target)||1|2026-01-26 11:53:03|2026-01-26 11:53:03
+3828|(target_switch,telescope_status__pointing_ra)-->(planned_targets__ra)||1|2026-01-26 11:54:55|2026-01-26 11:54:55
+3829|(recent_logs__type,planned_targets__priority)-->(gcn_alert)||3|2026-01-26 11:56:19|2026-01-26 12:09:44
+3830|(gcn_alert,planned_targets__status)-->(action_change_target)||1|2026-01-26 11:56:19|2026-01-26 11:56:19
+3831|(pla_pri,pla_exp,pl","sqlite> select * from reasoning_knowledge;
+5629|9131d4e69c86ae3d|2026-01-25 17:44:22|2026-01-25 17:44:22|1||---/jl/建议：切换观测目标至GCN警报，优先级高于当前目标|GCN警报优先级高于当前目标，建议切换观测目标|action_change_target+pla__priority--+rec__content--+rec__gcn_alert+target_change||0||(rec__gcn_alert,pla__priority)-->(target_change); (target_change,rec__content)-->(action_change_target)|0|2|0
+5630|b6fa9d66f4caff88|2026-01-25 17:45:54|2026-01-25 17:45:54|1||---/jl/建议：高优先级任务High Value Routine已排定，建议继续观测|高优先级任务已排定，无需更改；GCN警报低优先级，不影响当前高优先级任务|action_keep_plan+gcn_alert_conflict+planned_targets__priority--+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_alert_conflict); (gcn_alert_conflict,planned_targets__priority)-->(action_keep_plan)|0|2|0
+5631|5135fc8cea00d1cf|2026-01-25 17:47:27|2026-01-25 17:47:27|1||---/jl/建议：高优先级任务正在进行，观测GCN警报|高优先级任务正在进行，GCN警报存在，建议观测GCN警报|action_change_target+action_change_target--+gcn_alert_priority+planned_targets__priority+planned_targets__schedule_time+telescope_status__status--||0||(gcn_alert_priority,planned_targets__priority,telescope_status__status)-->(action_change_target); (action_change_target)-->(planned_targets__schedule_time)|0|2|0
+5632|2dd88f775990b157|2026-01-25 18:03:33|2026-01-25 18:03:33|1||---/jl/建议：高优先级目标需要调整，建议切换至GCN警报目标，曝光时间为300s|GCN警报优先级高于当前目标，需要调整观测|action_change_target+planned_targets__name--+planned_targets__priority--+priority_conflict+recent_logs__priority+recent_logs__type||0||(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(priority_conflict); (priority_conflict,planned_targets__name)-->(action_change_target)|0|2|0
+5633|c6489648872115c0|2026-01-25 18:05:08|2026-01-25 18:05:08|1||---/jl/建议：观测高价值例行目标，优先级高于GCN警报。|高价值例行目标优先级高于GCN警报，且观测窗口宽。|action_change_target+planned_targets__id--+planned_targets__priority+priority_conflict+recent_logs__priority--||0||(planned_targets__priority, recent_logs__priority)-->(priority_conflict); (priority_conflict,planned_targets__id)-->(action_change_target)|0|2|0
+5634|7616d78dc1f97d78|2026-01-25 18:07:03|2026-01-25 18:07:03|1||---/jl/建议：优先观测GCN警报目标，调整指向至RA:15h00m DEC:-20°00′并调整曝光至300s|GCN警报优先级高，需立即调整观测目标|action_adjust_exptime+action_change_target+high_priority+planned_targets__exptime--+planned_targets__priority--+recent_logs__gcn_alert+telescope_status__pointing_dec--+telescope_status__pointing_ra||0||(recent_logs__gcn_alert,planned_targets__priority)-->(high_priority); (high_priority,telescope_status__pointing_ra,telescope_status__pointing_dec)-->(action_change_target); (high_priority,planned_targets__exptime)-->(action_adjust_exptime)|0|3|0
+5635|e1fc2359b15fc81a|2026-01-25 18:08:41|2026-01-25 18:08:41|1||---/jl/建议：当前观测目标为高价值例行任务，优先级7，建议保持原计划。GCN警报未影响当前观测，仅为低科学价值事件。|高价值例行任务优先级高，GCN警报低科学价值，不影响当前观测。|action_keep_plan+gcn_alert__content+high_priority_target+high_priority_target--+planned_targets__priority--||0||(gcn_alert__content,planned_targets__priority)-->(high_priority_target); (high_priority_target)-->(action_keep_plan)|0|2|0
+5636|9961a2168d6dcb04|2026-01-25 18:10:16|2026-01-25 18:10:16|1||---/jl/建议：优先处理GCN警报，切换目标至RA:15h00m DEC:-20°00′|GCN警报优先级高，切换目标以获取科学价值|action_change_target+gcn_priority_high+planned_targets__priority--+recent_logs__gcn_alert+telescope_status__pointing_ra--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority_high);(gcn_priority_high,telescope_status__pointing_ra)-->(action_change_target)|0|2|0
+5637|9f2abfe9d49b4e50|2026-01-25 18:11:51|2026-01-25 18:11:51|1||---/jl/建议：高优先级任务已排队，建议保持计划并观测「High Value Routine」|高优先级计划目标排队，GCN警报较低优先级，保持原计划|action_keep_plan+pla_prior+planned_targets__priority+recent_logs__gcn_alert--+recent_logs__priority--||0||(pla_prior,recent_logs__gcn_alert)-->(action_keep_plan); (planned_targets__priority,recent_logs__priority)-->(action_keep_plan)|0|2|0
+5638|a436b2d43d888a94|2026-01-25 18:13:38|2026-01-25 18:13:38|1||---/jl/建议：当前观测任务为高价值例行观测，优先级高于GCN警报，建议保持当前计划|当前计划任务优先级高于GCN警报，建议保持当前计划|action_keep_plan+high_priority_conflict+pla_pri+planned_targets__priority--+recent_logs__priority+recent_logs__type--||0||(pla_pri,recent_logs__priority,recent_logs__type)-->(high_priority_conflict); (high_priority_conflict,planned_targets__priority)-->(action_keep_plan)|0|2|0
+5639|ccdf60eddf931036|2026-01-25 18:15:15|2026-01-25 18:15:15|1||---/jl/建议：切换观测目标至GCN警报，以提高科学价值。|GCN警报优先级高于当前计划目标，建议切换观测。|action_change_target+planned_targets__priority--+recent_logs__gcn_alert+target_switch+telescope_status__pointing_ra--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(target_switch); (target_switch,telescope_status__pointing_ra)-->(action_change_target)|0|2|0
+5640|315c4974a39f459b|2026-01-25 18:20:15|2026-01-25 18:20:15|1||---/jl/建议：切换至GCN观测，优先级高于常规观测，考虑科学收益|GCN警报优先级高，建议切换观测以获取科学价值|action_change_target+gcn_interference+pla_priority--+pla_tar+rec_log--||0||(pla_tar,rec_log)-->(gcn_interference); (gcn_interference,pla_priority)-->(action_change_target)|0|2|0
+5641|20f7b91db7aa5aa1|2026-01-25 18:21:51|2026-01-25 18:21:51|1||---/jl/建议：切换观测目标至GCN报警事件，优先级较高|GCN报警优先级高，建议切换目标|action_change_target+planned_targets__priority--+recent_logs__gcn_alert+telescope_status__pointing_dec--+telescope_status__pointing_ra||0||(recent_logs__gcn_alert,planned_targets__priority)-->(action_change_target); (telescope_status__pointing_ra,telescope_status__pointing_dec)-->(action_change_target)|0|2|0
+5642|575577002b28f6b3|2026-01-25 18:26:52|2026-01-25 18:26:52|1||---/jl/建议：切换到GCN警报目标RA:15h00m DEC:-20°00′，优先级高于当前目标|GCN警报优先级高，要求切换观测目标|action_change_target+planned_targets__priority--+priority_conflict+priority_conflict--+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(priority_conflict); (priority_conflict)-->(action_change_target)|0|2|0
+5643|2b34dddb82258500|2026-01-25 18:28:30|2026-01-25 18:28:30|1||---/jl/建议：优先观测高价值日常目标，当前目标观测时间为600s|高价值日常目标优先级较高，GCN警报科学价值低|action_change_target+action_change_target--+action_keep_plan+high_value+pla__priority+recent_logs__gcn_alert--+telescope_status__pointing_dec--+telescope_status__pointing_ra||0||(pla__priority,recent_logs__gcn_alert)-->(high_value); (high_value,telescope_status__pointing_ra,telescope_status__pointing_dec)-->(action_change_target); (action_change_target)-->(action_keep_plan)|0|3|0
+5644|460204680bd2af0d|2026-01-25 18:30:19|2026-01-25 18:30:19|1||---/jl/建议：根据高优先级GCN警报，切换目标至 RA:15h00m DEC:-20°00′，建议曝光时长300s|GCN警报优先级高，目标切换和曝光调整|action_change_target+planned_targets__exptime--+planned_targets__priority--+recent_logs__gcn_alert+target_switch||0||(recent_logs__gcn_alert,planned_targets__priority)-->(target_switch); (recent_logs__gcn_alert,planned_targets__exptime)-->(action_change_target)|0|3|0
+5645|a3f38cbb5c93bd66|2026-01-25 18:32:03|2026-01-25 18:32:03|1||---/jl/建议：高优先级目标“高价值例行”当前活跃，建议观测；同时有GCN警报，优先级为4，建议调整观测时间以包含警报目标的可见窗口。|当前高优先级目标活跃，同时存在GCN警报，建议调整观测计划以优先观测GCN目标的可见窗口。|action_adjust_exptime+action_change_target+action_wait+gcn_alert__priority--+gcn_alert__type+pla__priority+pla__status--||0||(pla__priority,pla__status)-->(action_change_target); (gcn_alert__type,gcn_alert__priority)-->(action_adjust_exptime); (gcn_alert__type,pla__status)-->(action_wait);|0|3|0
+5646|f33210ef168e2250|2026-01-25 18:33:34|2026-01-25 18:33:34|1||---/jl/建议：考虑切换到GCN Alert目标，优先级高于当前高值例行任务|GCN Alert优先级高于当前计划任务，建议切换观测目标|action_change_target+gcn_high_priority+pla_targets__priority--+rec_logs__content+rec_logs__gcn_alert--||0||(rec_logs__content,rec_logs__gcn_alert)-->(gcn_high_priority);(gcn_high_priority,pla_targets__priority)-->(action_change_target);|0|2|0
+5647|09b07f015f57facd|2026-01-25 18:35:09|2026-01-25 18:35:09|1||---/jl/建议：高价值观测任务优先，建议切换目标至High Value Routine|高价值观测任务优先级高于GCN警报，切换目标以获得更高科学收益|action_change_target+planned_targets__name--+planned_targets__priority+planned_targets__priority--+priority_conflict+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(priority_conflict);(priority_conflict,planned_targets__name)-->(action_change_target);(planned_targets__priority,planned_targets__name)-->(action_change_target)|0|5|0
+5648|1dcfedc7233c0d59|2026-01-25 18:36:54|2026-01-25 18:36:54|1||---/jl/建议：切换观测目标至GCN警报的位置，以利用可见窗口进行观测|GCN警报优先级高，切换观测目标以利用可见窗口|action_change_target+planned_targets__priority--+recent_logs__gcn_alert+target_change+telescope_status__pointing--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(target_change); (recent_logs__gcn_alert,telescope_status__pointing)-->(action_change_target)|0|2|0
+5649|26e4e2cba3cc4db1|2026-01-25 18:38:31|2026-01-25 18:38:31|1||---/jl/建议：观测高价值例行任务，优先级高，继续计划中。|高价值例行任务优先级高，继续计划。GCN警报优先级低，不影响。|action_keep_plan+current_target+gcn_alert+pla__priority+pla__priority--+pla__status+recent_logs__priority--+recent_logs__type||0||(pla__priority,pla__status,recent_logs__type,recent_logs__priority)-->(current_target); (current_target,pla__priority)-->(action_keep_plan); (recent_logs__type,recent_logs__priority)-->(gcn_alert); (gcn_alert,pla__priority)-->(action_keep_plan)|0|4|0
+5650|11f72c2bb53b0eac|2026-01-25 18:40:17|2026-01-25 18:40:17|1||---/jl/建议：高优先级事件，建议调整目标至RA:15h00m DEC:-20°00′并缩短曝光至300s|高优先级GCN警报触发，调整目标并缩短曝光时间|action_change_exptime+planned_targets__exptime--+planned_targets__priority--+recent_logs__content+recent_logs__gcn_alert+target_change||0||(recent_logs__gcn_alert,planned_targets__priority)-->(target_change); (recent_logs__content,planned_targets__exptime)-->(action_change_exptime)|0|3|0
+5651|fc65a122209c9f13|2026-01-25 18:41:52|2026-01-25 18:41:52|1||---/jl/建议：切换观测目标至GCN警报目标，优先级高|GCN警报优先级高于当前观测目标，建议切换观测|action_change_target+gcn_alert__content+gcn_alert_priority+gcn_alert_priority--+gcn_target_switch+planned_targets__name--+planned_targets__priority--+recent_logs__priority+recent_logs__type||0||(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(gcn_alert_priority); (gcn_alert_priority)-->(action_change_target); (gcn_alert__content,planned_targets__name)-->(gcn_target_switch)|0|3|0
+5652|56a3a45f20197f6d|2026-01-25 18:43:34|2026-01-25 18:43:34|1||---/jl/建议：切换观测目标至GCN紧急事件，优先级高于当前任务|GCN紧急事件优先级高，建议切换目标|action_change_target+planned_targets__priority--+recent_logs__gcn_alert+target_switch+telescope_status__pointing_ra--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(target_switch); (target_switch,telescope_status__pointing_ra)-->(action_change_target)|1|5|1
+5653|ffd582c95a6c03fe|2026-01-25 18:45:09|2026-01-25 18:45:09|1||---/jl/建议：观测高优先级GCN告警事件，调整目标至RA:15h00m DEC:-20°00′，曝光时间300s|GCN告警优先级高于当前计划目标，需立即切换目标进行观测|action_adjust_exptime+action_change_target+gcn_exptime--+gcn_priority_conflict+pla_priority--+re+pl+te--||0||(re+pl+te)-->(gcn_priority_conflict); (gcn_priority_conflict,pla_priority)-->(action_change_target); (action_change_target,gcn_exptime)-->(action_adjust_exptime)|0|3|0
+5654|140ee4dee5292139|2026-01-25 18:46:55|2026-01-25 18:46:55|1||---/jl/建议：高优先级任务观测，忽略低价值的GCN告警|高价值例行观测优先，忽略低价值GCN告警|action_keep_plan+planned_targets__exptime--+planned_targets__priority+priority_conflict+recent_logs__gcn_alert--+recent_logs__priority--||0||(planned_targets__priority, recent_logs__priority)-->(priority_conflict); (priority_conflict,planned_targets__exptime)-->(action_keep_plan); (recent_logs__gcn_alert)-->(action_keep_plan)|0|4|0
+5655|eaebc23243fa3f22|2026-01-25 18:48:32|2026-01-25 18:48:32|1||---/jl/建议：忽略低优先级的GCN警报，继续观测高价值例行任务|GCN警报科学价值低，高价值例行任务优先级高|action_change_target+action_keep_plan+gcn_alert_priority_conflict+planned_targets__priority+planned_targets__priority--+recent_logs__gcn_alert+recent_logs__gcn_alert--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_alert_priority_conflict); (gcn_alert_priority_conflict,planned_targets__priority)-->(action_keep_plan); (planned_targets__priority,recent_logs__gcn_alert)-->(action_change_target)|0|3|0
+5656|7d4c500e7d388658|2026-01-25 18:50:16|2026-01-25 18:50:16|1||---/jl/建议：根据GCN警报优先级调整目标，建议切换至‘Minor Event’，曝光时间300s|GCN警报优先级高于当前计划，需切换目标|action_change_target+planned_targets__priority--+planned_targets__status--+priority_conflict+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(priority_conflict); (priority_conflict,planned_targets__status)-->(action_change_target)|0|4|0
+5657|d4d7cec8144448c1|2026-01-25 18:51:50|2026-01-25 18:51:50|1||---/jl/建议：优先切换观测目标至GCN提醒的天体，以获得科学收益|GCN警报优先级高于当前计划目标，切换观测以获得更大的科学收益|action_change_target+gcn__content+gcn__priority+pla__priority--+pla__ra--||0||(gcn__priority,pla__priority)-->(action_change_target); (gcn__content,pla__ra)-->(action_change_target)|0|2|0
+5658|05a3c6274a3acad7|2026-01-25 18:53:37|2026-01-25 18:53:37|1||---/jl/建议：根据GCN告警，建议切换观测目标至RA:15h00m DEC:-20°00′，优先级高于当前观测|GCN告警观测目标优先级高，建议切换观测|action_change_target+planned_targets__priority--+recent_logs__gcn_alert+target_switch+telescope_status__pointing_ra--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(target_switch); (target_switch,telescope_status__pointing_ra)-->(action_change_target)|1|7|1
+5659|c59d9015933db5b5|2026-01-25 18:55:15|2026-01-25 18:55:15|1||---/jl/建议：切换到高优先级事件，调整曝光至300s|高优先级gcn_alert需要立即响应，切换目标并调整曝光时间|action_adjust_exptime+action_adjust_exptime""+action_change_target+high_priority+planned_targets__exptime--+planned_targets__priority--+recent_logs__gcn_alert+sqlreason:""recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(action_change_target); (recent_logs__gcn_alert,planned_targets__exptime)-->(action_adjust_exptime); SqlReason:""(recent_logs__gcn_alert,planned_targets__priority)-->(high_priority); (recent_logs__gcn_alert,planned_targets__exptime)-->(action_adjust_exptime)""|0|5|0
+5660|41295fd2bc263ff4|2026-01-25 18:56:59|2026-01-25 18:56:59|1||---/jl/建议：优先观测GCN警报目标，调整为RA:15h00m DEC:-20°00′ 曝光300s|GCN警报优先级高于当前计划，需调整目标和曝光时间|action_adjust_exptime+action_change_target+gcn_priority_override+planned_targets__exptime--+planned_targets__priority+planned_targets__ra--+recent_logs__gcn_alert+telescope_status__pointing_ra--||0||(recent_logs__gcn_alert,planned_targets__priority,telescope_status__pointing_ra)-->(gcn_priority_override); (gcn_priority_override,planned_targets__ra)-->(action_change_target); (gcn_priority_override,planned_targets__exptime)-->(action_adjust_exptime)|0|3|0
+5661|ff972d7070669367|2026-01-25 18:58:34|2026-01-25 18:58:34|1||---/jl/建议：优先观测GCN事件，调整指向RA:15h00m DEC:-20°00′，曝光时间调整为300s|GCN警报优先级高，需要调整望远镜指向|action_change_exptime+action_change_target+gcn_priority+planned_targets__exptime--+planned_targets__priority--+recent_logs__gcn_alert+telescope_status__pointing_ra--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority); (gcn_priority,telescope_status__pointing_ra)-->(action_change_target); (gcn_priority,planned_targets__exptime)-->(action_change_exptime)|0|3|0
+5662|fe8a2317c7aa1ffe|2026-01-25 19:00:16|2026-01-25 19:00:16|1||---/jl/建议：切换至GCN警报目标，优先级高于当前目标|GCN警报优先级高，当前目标低优先级，建议切换观测|action_change_target+planned_targets__priority--+planned_targets__status--+priority_conflict+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(priority_conflict); (priority_conflict,planned_targets__status)-->(action_change_target)|1|6|1
+5663|c6bc672ef847d58b|2026-01-25 19:01:46|2026-01-25 19:01:46|1||---/jl/建议：切换观测目标至GCN警报，优先级高于当前任务|GCN警报优先级高于当前计划目标，建议切换观测|action_change_target+pla__priority--+pla__status--+rec__gcn_alert+target_change||0||(rec__gcn_alert,pla__priority)-->(target_change); (target_change,pla__status)-->(action_change_target)|0|3|0
+5664|c08fee3cda793e1a|2026-01-25 19:03:42|2026-01-25 19:03:42|1||---/jl/建议：当前观测目标优先级高，但GCN警报优先级更高，建议调整观测目标至GCN警报指定位置|GCN警报优先级高于当前观测目标，建议切换观测目标。|action_change_target+gcn_alert+gcn_priority_high+planned_targets__priority--+planned_targets__status--+recent_logs__content+recent_logs__priority--+recent_logs__type+target_pointing_mismatch+telescope_status__pointing_ra--||0||(recent_logs__type,gcn_alert,recent_logs__priority)-->(gcn_priority_high); (gcn_priority_high,planned_targets__priority)-->(action_change_target); (recent_logs__content,telescope_status__pointing_ra)-->(target_pointing_mismatch); (target_pointing_mismatch,planned_targets__status)-->(action_change_target)|0|4|0
+5665|8e44f38774b3ecbf|2026-01-25 19:05:13|2026-01-25 19:05:13|1||---/jl/建议：高优先级任务排期冲突，建议更换目标|GCN警报优先级高于现有计划目标，需要更换目标观测|action_change_target+gcn__priority+pla__priority--+priority_conflict+priority_conflict--||0||(gcn__priority,pla__priority)-->(priority_conflict); (priority_conflict)-->(action_change_target);|0|3|0
+5666|f4313ce5a0bbe3b9|2026-01-25 19:06:59|2026-01-25 19:06:59|1||---/jl/建议：优先处理GCN警报，切换目标至RA:15h00m DEC:-20°00′，调整曝光至300s|存在GCN警报，优先级高于当前计划目标，需切换观测目标并调整曝光时间|action_adjust_exptime+action_change_target+gcn_priority+pla_tar__exptime--+pla_tar__priority--+rec_log__content+rec_log__content--+rec_log__gcn_alert||0||(rec_log__gcn_alert,rec_log__content)-->(gcn_priority); (gcn_priority,pla_tar__priority)-->(action_change_target); (rec_log__content,pla_tar__exptime)-->(action_adjust_exptime)|0|3|0
+5667|158452c41431fbe7|2026-01-25 19:08:31|2026-01-25 19:08:31|1||---/jl/建议：高优先级新GCN目标出现，建议切换至GCN目标观测|GCN警报优先级高，建议切换观测目标。|action_change_target+gcn_alert+pla__id--+pla__priority+recent_logs__priority--+recent_logs__type||0||(pla__priority,recent_logs__type,recent_logs__priority)-->(gcn_alert); (gcn_alert,pla__id)-->(action_change_target);|0|2|0
+5668|70626118978d5d83|2026-01-25 19:10:18|2026-01-25 19:10:18|1||---/jl/建议：高优先级目标正在观测，建议暂停响应GCN警报|高优先级目标正在观测，暂停响应低优先级GCN警报|action_keep_plan+action_wait+pla__priority+pla__priority--+pla__status+pla__status--+recent_logs__priority+recent_logs__type--+telescope_status__status||0||(pla__priority,pla__status,recent_logs__type)-->(action_wait); (recent_logs__priority,pla__priority)-->(action_wait); (telescope_status__status,pla__status)-->(action_keep_plan)|0|3|0
+5669|4b0e72b0e0d78b5b|2026-01-25 19:11:49|2026-01-25 19:11:49|1||---/jl/建议：切换观测目标至GCN事件，优先级更高|GCN事件优先级高于当前目标，建议切换观测|action_change_target+high_priority+planned_targets__priority--+planned_targets__status--+recent_logs__priority+recent_logs__type||0||(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(high_priority); (high_priority,planned_targets__status)-->(action_change_target)|0|2|0
+5670|0977c5020e790ac7|2026-01-25 19:13:34|2026-01-25 19:13:34|1||---/jl/建议：优先处理GCN警报观测，切换目标至RA:15h00m DEC:-20°00′|GCN警报优先级高，科学价值低，但需立即观测|action_change_target+gcn_priority+planned_targets__priority--+recent_logs__content+recent_logs__type||0||(recent_logs__content,recent_logs__type,planned_targets__priority)-->(gcn_priority); (gcn_priority,planned_targets__priority)-->(action_change_target)|0|2|0
+5671|f2f5770548dc2c27|2026-01-25 19:15:11|2026-01-25 19:15:11|1||---/jl/建议：当前计划目标与GCN警报目标天顶角大，优先切换到GCN警报目标进行观测|当前GCN警报高优先级，与计划目标天顶角大，应切换目标进行观测|action_change_target+gcn_log__content+planned_tar__dec+planned_tar__ra+priority_conflict+priority_conflict--+telescope_stat__pointing_dec--+telescope_stat__pointing_ra||0||(gcn_log__content,planned_tar__ra,planned_tar__dec,telescope_stat__pointing_ra,telescope_stat__pointing_dec)-->(priority_conflict); (priority_conflict)-->(action_change_target)|0|4|0
+5672|440f9c8bc8e74745|2026-01-25 19:16:53|2026-01-25 19:16:53|1||---/jl/建议：调整至新GCN目标RA:15h00m DEC:-20°00′，优先级高于当前目标|新GCN目标优先级高，需立即调整|action_change_target+gcn_priority+planned_targets__priority--+recent_logs__type||0||(recent_logs__type,planned_targets__priority)-->(gcn_priority); (gcn_priority,planned_targets__priority)-->(action_change_target)|0|3|0
+5673|cdc24cde556fa1a4|2026-01-25 19:18:29|2026-01-25 19:18:29|1||---/jl/建议：优先处理GCN警报，切换到15h00m -20°00′目标，曝光时间300s|GCN警报优先级高，需要切换观测目标。|action_change_target+gcn_priority+planned_targets__exptime--+planned_targets__priority--+recent_logs__gcn_alert+target_priority_conflict+target_priority_conflict--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority); (gcn_priority,planned_targets__exptime)-->(action_change_target); (planned_targets__priority)-->(target_priority_conflict); (target_priority_conflict)-->(action_change_target)|0|5|0
+5674|8a535ecfc0112635|2026-01-25 19:20:14|2026-01-25 19:20:14|1||---/jl/建议：高价值例行观测优先级高，建议切换目标到 High Value Routine|高价值例行观测优先级高于GCN警报，建议切换目标|action_change_target+planned_targets__priority+planned_targets__priority--+recent_logs__priority--+target_switch||0||(planned_targets__priority,recent_logs__priority)-->(target_switch); (target_switch,planned_targets__priority)-->(action_change_target)|0|2|0
+5675|d5c9b9f6083e127b|2026-01-25 19:21:45|2026-01-25 19:21:45|1||---/jl/建议：高优先级GNC告警，建议切换至新目标|GNC告警优先级高于当前活动目标，建议切换|action_change_target+planned_targets__priority+recent_logs__gcn_alert+target_switch+target_switch--+telescope_status__pointing--||0||(recent_logs__gcn_alert,planned_targets__priority,telescope_status__pointing)-->(target_switch); (target_switch)-->(action_change_target)|0|2|0
+5676|a307df8f5f57a18c|2026-01-25 19:23:36|2026-01-25 19:23:36|1||---/jl/建议：高优先级任务推迟至高价值例行观测后|高优先级警报存在，但科学价值低，推迟观测高价值例行任务后进行|action_change_target+action_wait+gcn_alert+pla__name--+pla__priority+pla__priority--+rec__priority--+rec__type||0||(rec__type,rec__priority)-->(gcn_alert); (gcn_alert,pla__priority)-->(action_wait); (pla__priority,pla__name)-->(action_change_target)|0|3|0
+5677|10f2b655ba7d5899|2026-01-25 19:25:07|2026-01-25 19:25:07|1||---/jl/建议：切换至GCN观测，因为高优先级紧急通知|GCN紧急通知优先级高，需立即切换目标|action_change_target+gcn_priority+planned_targets__priority--+recent_logs__gcn_alert--||0||(recent_logs__gcn_alert)-->(gcn_priority); (gcn_priority,planned_targets__priority)-->(action_change_target)|0|4|0
+5678|82a25fee20dc5751|2026-01-25 19:26:54|2026-01-25 19:26:54|1||---/jl/建议：观测高价值例行目标，因为GDN告警事件的科学价值低|GDN告警科学价值低，优先观测高优先级例行目标|action_change_target+gcn_alert__content+high_priority+planned_targets__priority--||0||(gcn_alert__content,planned_targets__priority)-->(high_priority); (high_priority,planned_targets__priority)-->(action_change_target)|0|2|0
+5679|853ab5b09a69102c|2026-01-25 19:28:25|2026-01-25 19:28:25|1||---/jl/建议：观测当前高价值例行任务，优先级高于GCN警报，保持600s曝光时间。|当前高价值例行任务优先级高于GCN警报，保持原计划。|action_keep_plan+gcn__priority+planned__exptime--+planned__priority--+planned__priority_high||0||(gcn__priority,planned__priority)-->(planned__priority_high); (planned__priority_high,planned__exptime)-->(action_keep_plan)|0|2|0
+5680|6aa03ad99749e26b|2026-01-25 19:30:16|2026-01-25 19:30:16|1||---/jl/建议：根据GCN告警切换目标至RA:15h00m DEC:-20°00′|GCN告警高优先级事件，建议切换观测目标以最大化科学收益|action_change_target+gcn_alert+planned_targets__name+planned_targets__priority--+recent_logs__content+recent_logs__type--+target_match+target_match--+telescope_status__pointing_dec--+telescope_status__pointing_ra||0||(recent_logs__content,recent_logs__type)-->(gcn_alert); (gcn_alert,planned_targets__priority)-->(action_change_target); (telescope_status__pointing_ra,telescope_status__pointing_dec)-->(target_match); (target_match)-->(planned_targets__name)|0|4|0
+5681|488e34c911be1913|2026-01-25 19:31:50|2026-01-25 19:31:50|1||---/jl/建议：高优先级例行观测目标优先，不追随GCN小事件|高优先级目标优先，GCN小事件科学价值低|action_change_target+action_keep_plan+high_priority+ignore_gcn+planned_targets__name--+planned_targets__priority+recent_logs__priority+recent_logs__priority--+recent_logs__scientific_value--+recent_logs__type||0||(planned_targets__priority,recent_logs__type,recent_logs__priority)-->(high_priority); (high_priority,planned_targets__name)-->(action_change_target); (recent_logs__priority,recent_logs__scientific_value)-->(ignore_gcn); (ignore_gcn,planned_targets__name)-->(action_keep_plan)|0|4|0
+5682|719541cdae6046e7|2026-01-25 19:33:33|2026-01-25 19:33:33|1||---/jl/建议：GCN警报优先级高于当前目标，建议切换至新目标|GCN警报优先级高于当前目标优先级，需要立即切换观测目标|action_change_target+pla_tar__priority--+rec_logs__gcn_alert+rec_logs__type+target_switch||0||(rec_logs__gcn_alert,rec_logs__type,pla_tar__priority)-->(target_switch); (target_switch,rec_logs__gcn_alert,pla_tar__priority)-->(action_change_target)|0|2|0
+5683|2034be836c871a9b|2026-01-25 19:35:05|2026-01-25 19:35:05|1||---/jl/建议：高优先级新目标可见，建议切换观测目标至GCN事件|新GCN事件优先级高于当前目标，且可见，建议切换观测|action_change_target+pla__priority--+priority_conflict+rec__gcn_alert+telescope_status__pointing--||0||(rec__gcn_alert,pla__priority)-->(priority_conflict); (priority_conflict,telescope_status__pointing)-->(action_change_target)|0|2|0
+5684|7940c2965fe7da8c|2026-01-25 19:36:54|2026-01-25 19:36:54|1||---/jl/建议：切换观测目标至GCN警报，以最大化科学收益|GCN警报优先级高于当前计划目标，建议切换观测以应对紧急事件。|action_change_target+planned_targets__priority--+recent_logs__gcn_alert+target_change+target_change--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(target_change); (target_change)-->(action_change_target)|0|4|0
+5685|bea43f3c94b759ea|2026-01-25 19:38:24|2026-01-25 19:38:24|1||---/jl/建议：切换至高价值例行观测，曝光时间600s|GCN警报事件科学价值低，计划高价值例行观测优先。|action_change_target+high_value_target_change+planned_targets__exptime--+planned_targets__priority--+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(high_value_target_change); (high_value_target_change,planned_targets__exptime)-->(action_change_target)|0|2|0
+5686|2093e51db8396333|2026-01-25 19:40:11|2026-01-25 19:40:11|1||---/jl/建议：优先观测GCN警报目标|GCN警报优先级高，应立即调整观测目标|action_change_target+gcn_alert_priority+planned_targets__priority+planned_targets__priority--+recent_logs__content--+recent_logs__type||0||(planned_targets__priority,recent_logs__type,recent_logs__content)-->(gcn_alert_priority); (gcn_alert_priority,planned_targets__priority)-->(action_change_target)|0|2|0
+5687|e1e9eafdb9102676|2026-01-25 19:41:39|2026-01-25 19:41:39|1||---/jl/建议：切换至GCN紧急目标，优先级高，科学价值重要|GCN紧急目标优先级高，需切换观测|action_change_target+planned_targets__priority--+planned_targets__status--+priority_conflict+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(priority_conflict); (priority_conflict,planned_targets__status)-->(action_change_target)|1|8|1
+5688|f3728b81e7ec0b41|2026-01-25 19:43:36|2026-01-25 19:43:36|1||---/jl/建议：优先观测GCN告警目标，切换至RA:15h00m DEC:-20°00′，曝光时间调整为300s|GCN告警优先级高，需切换目标，曝光时间调整|action_adjust_exptime+action_change_target+gcn_priority_high+planned_targets__exptime--+planned_targets__priority--+planned_targets__ra--+recent_logs__content+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority_high); (gcn_priority_high,planned_targets__ra)-->(action_change_target); (recent_logs__content,planned_targets__exptime)-->(action_adjust_exptime);|0|4|0
+5689|9796623852cb3203|2026-01-25 19:45:08|2026-01-25 19:45:08|1||---/jl/建议：切换至高价值例行观测，目标RA:12h00m DEC:+30°00′，曝光600s|GCN警报优先级低，切换至高价值例行观测|action_change_target+high_priority_conflict+planned_targets__name--+planned_targets__priority--+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(high_priority_conflict); (high_priority_conflict,planned_targets__name)-->(action_change_target)|0|2|0
+5690|2f943abf97f788da|2026-01-25 19:46:53|2026-01-25 19:46:53|1||---/jl/建议：高价值例行观测优先，建议切换目标至RA:12h00m DEC:+30°00′|高价值例行观测优先级高于GCN警报，且目标可见。|action_change_target+gcn+pla+sta-+target_priority_conflict+target_priority_conflict-||0||(gcn+pla+sta)->target_priority_conflict; (target_priority_conflict)->action_change_target|0|2|0
+5691|8d89045f55646972|2026-01-25 19:48:23|2026-01-25 19:48:23|1||---/jl/建议：观测高价值例行任务，当前无GCN警报影响，优先级高于GCN警报|高价值例行任务优先级高于GCN警报，无干扰，可观测|action_change_target+pla_targets__priority--+priority_conflict+rec_logs__gcn_alert||0||(rec_logs__gcn_alert,pla_targets__priority)-->(priority_conflict); (priority_conflict,pla_targets__priority)-->(action_change_target)|0|2|0
+5692|919f6b2cd8b52789|2026-01-25 19:50:14|2026-01-25 19:50:14|1||---/jl/建议：高优先级预定目标“High Value Routine”当前可观测，建议调整观测目标。|当前预定高优先级目标可观测，高优先级目标与当前望远镜指向角距较远，建议调整观测目标。|action_change_target+pla_exptime--+pla_priority+rec+pla+tel--||0||(rec+pla+tel)-->(action_change_target); (pla_priority,pla_exptime)-->(action_change_target)|0|2|0
+5693|87ca3cb4c1caa195|2026-01-26 02:34:05|2026-01-26 02:34:05|1||---/jl/建议：高优先级预定目标“High Value Routine”当前可观测，建议调整观测目标。|当前预定高优先级目标可观测，高优先级目标与当前望远镜指向角距较远，建议调整观测目标。|action_change_target+planned_targets__exptime+planned_targets__exptime--+planned_targets__priority+recent_logs__gcn_alert+telescope_status__pointing_ra--||0||(recent_logs__gcn_alert,planned_targets__priority,planned_targets__exptime,telescope_status__pointing_ra)-->(action_change_target); (planned_targets__priority,planned_targets__exptime)-->(action_change_target)|0|2|0
+5694|b9aa841a485eb8c6|2026-01-26 02:35:42|2026-01-26 02:35:42|1||---/jl/建议：切换至GCN告警目标以优化科学收益|GCN告警优先级高于当前计划目标，建议切换观测|action_change_target+gcn_alert__priority+planned_targets__priority--+planned_targets__status--+target_priority||0||(gcn_alert__priority,planned_targets__priority)-->(target_priority); (target_priority,planned_targets__status)-->(action_change_target)|0|2|0
+5695|aa9b56cb8b723b09|2026-01-26 02:37:19|2026-01-26 02:37:19|1||---/jl/建议：优先处理GCN警报，调整目标至RA:15h00m DEC:-20°00′|GCN警报优先级高，需要立即调整目标|action_change_target+gcn_alert__priority+planned_targets__name--+planned_targets__pointing_ra+planned_targets__priority--+priority_conflict+telescope_status__pointing_ra--||0||(gcn_alert__priority,planned_targets__priority)-->(priority_conflict);(priority_conflict,planned_targets__name)-->(action_change_target); (action_change_target,telescope_status__pointing_ra)-->(planned_targets__pointing_ra)|0|5|0
+5696|dae270a576531b48|2026-01-26 02:38:56|2026-01-26 02:38:56|1||---/jl/建议：切换观测目标至GCN报警，优先级高于当前计划目标|GCN警报优先级高于当前计划目标，切换观测目标至GCN报警。|action_change_target+gcn_priority+planned_targets__priority+planned_targets__priority--+recent_logs__priority--+recent_logs__type||0||(recent_logs__type,planned_targets__priority,recent_logs__priority)-->(gcn_priority); (gcn_priority,planned_targets__priority)-->(action_change_target)|0|5|0
+5697|53a66e22c065bd6a|2026-01-26 02:40:29|2026-01-26 02:40:29|1||---/jl/建议：GCN告警高优先级，建议切换观测目标至GCN告警位置|GCN告警优先级高于当前计划目标，建议切换观测|action_change_target+planned_targets__priority--+priority_conflict+recent_logs__gcn_alert--||0||(recent_logs__gcn_alert)-->(priority_conflict);(priority_conflict,planned_targets__priority)-->(action_change_target)|0|2|0
+5698|8cd4e13fcf0a7135|2026-01-26 02:42:08|2026-01-26 02:42:08|1||---/jl/建议：优先观测GCN告警目标，调整望远镜指向至RA:15h00m DEC:-20°00′，并缩短曝光时间至300s|GCN警报优先级高，需调整观测目标至告警位置，缩短曝光时间。|action_change_exptime+action_change_target+gcn_priority+planned_targets__exptime--+planned_targets__priority--+recent_logs__gcn_alert+telescope_status__pointing--||0||(recent_logs__gcn_alert,planned_targets__priority)-->(gcn_priority); (gcn_priority,planned_targets__exptime)-->(action_change_exptime); (gcn_priority,telescope_status__pointing)-->(action_change_target)|0|6|0
+5699|c4f61bdb68a29c7b|2026-01-26 02:43:42|2026-01-26 02:43:42|1||---/jl/建议：由于GCN警报高优先级事件，建议切换观测目标至RA:15h00m DEC:-20°00′|GCN警报优先级高于当前计划目标，建议切换观测目标|action_change_target+planned_targets__priority--+priority_conflict+priority_conflict--+recent_logs__gcn_alert||0||(recent_logs__gcn_alert,planned_targets__priority)-->(priority_conflict); (priority_conflict)-->(action_change_target)|1|10|1
+5700|004319b01de83040|2026-01-26 02:45:15|2026-01-26 02:45:15|1||---/jl/建议：优先调度GCN警报观测，因为其优先级高于已计划的高价值例行观测|GCN警报优先级高于计划目标，因此调度GCN警报|action_change_target+gcn_priority+gcn_priority--+planned_targets__priority--+recent_logs__priority+recent_logs__type||0||(recent_logs__type, recent_logs__priority, planned_targets__priority)-->(gcn_priority); (gcn_priority)-->(action_change_target)|0|2|0
+5701|19d99d65e36309e5|2026-01-26 02:46:48|2026-01-26 02:46:48|1||---/jl/建议：切换至GCN观测对象，优先级高于当前任务|GCN观测优先级高于当前计划观测|action_change_target+planned_targets__priority--+planned_targets__status--+recent_logs__priority+recent_logs__type+target_priority_change||0||(recent_logs__type,recent_logs__priority,planned_targets__priority)-->(target_priority_change); (target_priority_change,planned_targets__status)-->(action_change_target)|0|2|0
+5702|6d178d70ccf51a04|2026-01-26 03:00:51|2026-01-26 03:00:51|1||---/jl/建议：考虑切换至GCN告警目标，优先级较高|GCN告警优先级高于当前计划目标，建议切换观测|action_change_target+gcn_alert_priority+planned_targets__priority--+recent_logs__type||0||(recent_logs__type,planned_targets__priority)-->(gcn_alert_priority); (gcn_alert_priority,planned_targets__priority)-->(action_change_target)|0|3|0
+5703|80c796d671c64073|2026-01-26 03:02:27|2026-01-26 03:02:27|1||---/jl/建议：当前观测目标为'High Value Routine'，优先级较高，建议观测此目标并延长曝光时间至900s以提高观测效果|当前目标优先级高且可见，推荐观测并调整曝光时间以提高效果|action_adjust_exptime+action_change_target+planned_targets__exptime--+planned_targets__priority+rec_logs__gcn_alert+telescope_status__pointing--||0||(rec_logs__gcn_alert,planned_targets__priority,telescope_status__pointing)-->(action_change_target); (planned_targets__exptime)-->(action_adjust_exptime)|0|2|0
+5704|532302e8dc740df6|2026-01-26 03:04:00|2026-01-26 03:04:00|1||---/jl/建议：观测高价值例行任务，因为GCN警报科学价值低|GCN警报科学价值低，高价值例行任务优先级高|action_change_target+high_priority_target+high_priority_target--+pla__priority--+rec__gcn_alert||0||(rec__gcn_alert,pla__priority)-->(high_priority_target); (high_priority_target)-->(action_change_target)|0|2|0
+5705|09377a2185ce449c|2026-01-26 03:05:42|2026-01-26 03:05:42|1||---/jl/建议：切换观测目标至GCN警报「Minor Event」，优先级高于当前计划目标|GCN警报优先级高，且可见时间窗口为3小时，应优先观测|action_change_e",,,,,
