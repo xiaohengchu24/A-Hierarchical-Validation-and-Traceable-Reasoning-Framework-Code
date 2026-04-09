@@ -1,0 +1,7 @@
+Timestamp,TotalTests,Successes,Failures,SuccessRate(%),InterceptRate(%),Confidence_Avg
+2026-02-02 02:03:33,199,196,3,98.49,1.51,0.979
+
+RuleID,FailureCount
+observe_time_future,1
+telescope_status:732,1
+too_mandatory_response,1
