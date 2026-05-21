@@ -1,0 +1,4 @@
+Timestamp,TotalTests,Successes,Failures,SuccessRate(%),InterceptRate(%),Confidence_Avg
+2026-01-25 21:05:20,200,193,7,96.50,3.50,0.968
+
+RuleID,FailureCount

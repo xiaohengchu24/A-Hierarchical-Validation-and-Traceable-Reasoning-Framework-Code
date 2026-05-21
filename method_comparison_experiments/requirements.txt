@@ -1,0 +1,5 @@
+fastavro
+llama-cpp-python
+pandas
+matplotlib
+pulp

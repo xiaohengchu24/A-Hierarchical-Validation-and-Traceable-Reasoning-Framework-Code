@@ -1,0 +1,6 @@
+Timestamp,TotalTests,Successes,Failures,SuccessRate(%),InterceptRate(%),Confidence_Avg
+2026-01-30 12:41:00,208,193,15,92.79,7.21,0.958
+
+RuleID,FailureCount
+telescope_status:729,10
+interference_consistency,1

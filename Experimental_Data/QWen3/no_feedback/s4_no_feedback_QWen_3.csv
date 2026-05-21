@@ -1,0 +1,6 @@
+Timestamp,TotalTests,Successes,Failures,SuccessRate(%),InterceptRate(%),Confidence_Avg
+2026-02-04 15:24:07,200,197,3,98.50,1.50,0.904
+
+RuleID,FailureCount
+interference_consistency,2
+satellite_many,1
